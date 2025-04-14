@@ -27,11 +27,14 @@ public class WeatherSummary {
             double firstTemp = scanner.nextDouble();
             double max = firstTemp;
             double min = firstTemp;
+            double total = firstTemp;
+
+            int count = 1;
 
         
             while (scanner.hasNextDouble()) {
                 double temp = scanner.nextDouble();
-
+   
                 if (temp > max) {
                     max = temp;
                 }
@@ -39,11 +42,18 @@ public class WeatherSummary {
                 if (temp < min) {
                     min = temp;
                 }
+
+                total += temp;
+
+                count++;
             }
+
+            double avg = total/count;
 
             
             System.out.println("Max: " + max);
             System.out.println("Min: " + min);
+            System.out.println("Average: "+ avg);
             } 
     }
 }
